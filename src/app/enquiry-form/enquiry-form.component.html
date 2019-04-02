@@ -1,0 +1,156 @@
+<section id="call-to-action" class="wow fadeInUp bg-dark" >
+  <div class="container">
+    <div class="section-header">
+      <form enctype="multipart/form-data" method="POST" id="enquiry-form" class="enquiry" style="padding-top:5%;">
+        <div class="row">
+          <div class="text-light">
+            <div class="col-xl-12 col-sm-12 col-md-12 col-lg-12 ">
+              <div class="form-group row">
+                <label class="col-sm-2" for="name">Customer Name:<i class="text-danger">*</i></label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control" id="name" placeholder="First name" name="name">
+                </div>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control" id="lname" placeholder="Last name" name="lname">
+                </div>
+                <label class="col-md-1 col-sm-1" for="mobile">Mobile:<i class="text-danger">*</i></label>
+                <div class="col-sm-3 col-md-3">
+                  <input type="text" name="mobileNo" id="mobileNo" pattern="[0-9]{10}" class="form-control" placeholder="Mobile no">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class=" col-sm-2" for="telephone">Telephone Number:</label>
+                <div class="col-sm-2">
+                  <input type="text" class="form-control" id="code" placeholder="Code No" name="code">
+                  <label class="control-label ">Area Code</label>
+                </div>
+                <div class="col-sm-3">
+                  <input type="text" name="telephoneNo" id="telephoneNo" placeholder="Telephone No" name="telephoneNo"
+                    class="form-control">
+                  <label class="control-label ">Phone Number</label>
+                </div>
+                <label class="col-md-1 col-sm-1" for="email">Email:<i class="text-danger">*</i></label>
+                <div class="col-sm-4 col-md-4">
+                  <input type="text" id="email" name="email" class="form-control" placeholder="Email Id">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class=" col-sm-2" for="address">Address:</label>
+                <div class="col-sm-3 col-md-3">
+                  <input type="text" name="address" class="form-control" placeholder="Address">
+                  <label class="control-label ">Street/Town</label>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                  <input type="text" name="city" class="form-control" placeholder="City">
+                  <label class="control-label ">City</label>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                  <input type="text" name="pincode" class="form-control" placeholder="Pincode">
+                  <label class="control-label ">Pincode</label>
+                </div>
+              </div>
+              <fieldset class="scheduler-border">
+                <legend class="scheduler-border" style=" color: #50d8af"><b>Property Details</b></legend><br>
+                <div class="form-group row">
+                  <label class=" col-sm-3" for="text">Type of Property:</label>
+                  <div class="col-sm-9">
+                    <label class="radio-inline col-sm-2.5">
+                      <input type="radio" name="optradio" value="Department" checked onclick="javascript:yesnoCheck();">Department
+                    </label>&nbsp;&nbsp;&nbsp;
+
+                    <label class="radio-inline col-sm-2.5">
+                      <input type="radio" name="optradio" value="Site/Builders" onclick="javascript:yesnoCheck();">site/Builders
+                    </label>&nbsp;&nbsp;&nbsp;
+                    <label class="radio-inline col-sm-2.5">
+                      <input type="radio" name="optradio" value="Developers" onclick="javascript:yesnoCheck();">Developers
+
+                    </label>&nbsp;&nbsp;&nbsp;
+                    <label class="radio-inline col-sm-2.5">
+                      <input type="radio" name="optradio" onclick="javascript:yesnoCheck();" id="yesCheck">Others
+                    </label>
+                    <label id="ifYes" style="visibility:show">
+                      If Others, Name: <input type='text' name='radio'><br>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class=" col-sm-3" for="comment">Details:</label>
+                  <div class="col-sm-9">
+                    <textarea class="form-control" name="comments" rows="1" id="comments"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class=" col-sm-3" for="file">Attached File:</label>
+                  <div class="col-sm-3">
+                    <input type="file" name="file" class="cta-btn" id="fileName" accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
+                                                        text/plain, application/pdf, image/*">
+                  </div>
+                </div>
+
+              </fieldset>
+              <div class="form-group row">
+                <label class=" col-sm-2" for="text">Refer By:</label>
+                <div class="col-sm-9">
+                  <label class="radio-inline">
+                    <input type="radio" name="refer" value="Friends" checked onclick="javascript:referCheck();" id="frndCheck">Friends
+                  </label>&nbsp;&nbsp;&nbsp;
+                  <label class="radio-inline">
+                    <input type="radio" name="refer" value="Old Clients" onclick="javascript:referCheck();" id="clientCheck">Old
+                    Clients
+                  </label>&nbsp;&nbsp;&nbsp;
+                  <label class="radio-inline">
+                    <input type="radio" name="refer" value="Bank" onclick="javascript:referCheck();" id="bankCheck">Bank
+                  </label>&nbsp;&nbsp;&nbsp;
+                  <label class="radio-inline">
+                    <input type="radio" name="refer" value="Internet" onclick="javascript:referCheck();" id="internetCheck">Internet
+                  </label>
+                  <label id="Yes" style="visibility:hidden">
+                    Reference Name: <input type='text' id='yes' name='referName'><br>
+                  </label>
+                  <script>function referCheck() {
+                      if (document.getElementById('frndCheck').checked) {
+                        document.getElementById('Yes').style.visibility = 'visible';
+                      }
+                      else if (document.getElementById('clientCheck').checked) {
+                        document.getElementById('Yes').style.visibility = 'visible';
+                      }
+                      else if (document.getElementById('bankCheck').checked) {
+                        document.getElementById('Yes').style.visibility = 'visible';
+                      }
+                      else if (document.getElementById('internetCheck').checked) {
+                        document.getElementById('Yes').style.visibility = 'visible';
+                      }
+                      else document.getElementById('Yes').style.visibility = 'hidden';
+
+                    }</script>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class=" col-sm-2" for="date">Pre-lim Report Expected date:<i class="text-danger">*</i></label>
+                <div class="col-sm-4">
+                  <input type="date" id="expectDate" autocomplete="off" name="expectDate" class="form-control">
+                </div>
+
+                <label class=" col-sm-2" for="date">Details Collected by:<i class="text-danger">*</i></label>
+
+                <div class="col-sm-4">
+                  <select class="form-control" name="staffName" id="staffName">
+                    <option value="">Select Staff Name</option>
+                    <option value="Mr.SelvaKumar">Mr.SelvaKumar</option>
+                    <option value="Mrs.Sumitha">Mrs.Sumitha</option>
+                    <option value="Mrs.Vena">Mrs.Vena</option>
+                    <option value="Mr">Mr.Vijayakumar</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7 cta-btn-container">
+              <a class="cta-btn" href="#">Submit</a>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>
